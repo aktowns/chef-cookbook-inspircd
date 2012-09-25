@@ -15,6 +15,10 @@ default['inspircd']['listen']      = ['127.0.0.1']
 default['inspircd']['fqdn']        = 'irc.tfoundry.com'
 default['inspircd']['tlslisten']   = ['127.0.0.1']
 
+default['inspircd']['links']      = []
+default['inspircd']['ulines']     = []
+
+
 case node['platform']
 when "debian","ubuntu"
   default['inspircd']['user']       = "irc"

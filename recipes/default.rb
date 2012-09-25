@@ -126,6 +126,21 @@ template "inspircd.conf" do
   notifies :reload, 'service[inspircd]', :immediately
 end
 
+template "links.conf" do
+  path "#{node[:inspircd]['conf_dir']}/links.conf"
+  source   "links.conf.erb"
+  mode     0644
+  owner    "root"
+  group    "root"
+  variables(
+    :server_links     => node[:inspircd][:links],
+    :server_ulines    => node[:inspircd][:ulines]
+  )
+  notifies :reload, 'service[inspircd]', :immediately
+end
+
+
+
 template "opers.conf" do
   path "#{node[:inspircd]['conf_dir']}/opers.conf"
   source   "opers.conf.erb"

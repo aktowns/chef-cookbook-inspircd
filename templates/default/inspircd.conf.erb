@@ -55,14 +55,7 @@
     ipv6clone="128"
 >
 
-<link name="services.tfoundry.com"
-      ipaddr="localhost"
-      port="7000"
-      allowmask="127.0.0.0/8"
-      sendpass="penguins"
-      recvpass="polarbears">
-
-<uline server="services.tfoundry.com" silent="yes">
+<include file="<%= @conf_dir %>/links.conf">
 
 <banlist chan="#morons" limit="128">
 <banlist chan="*" limit="69">
