@@ -120,6 +120,7 @@ template "inspircd.conf" do
     :description        => node[:inspircd][:server_description],
     :network            => node[:inspircd][:server_network],
     :server_listen      => node[:inspircd][:listen],
+    :server_tlslisten   => node[:inspircd][:tlslisten],
     :server_admin       => search(:ircd_admin, "*:*").first,
   )
   notifies :reload, 'service[inspircd]', :immediately

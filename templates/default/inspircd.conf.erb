@@ -15,6 +15,14 @@
     type="clients">
 <% end %>
 
+<% @server_tlslisten.each do |p| %>
+<bind 
+    address="<%= p %>"
+    port="6697"
+    type="clients"
+    ssl="gnutls">
+<% end %>
+
 <connect
     deny="69.254.*" reason="denied"
 >
