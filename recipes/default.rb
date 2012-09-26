@@ -190,6 +190,13 @@ template "modules.conf" do
   mode     0644
   owner    "root"
   group    "root"
+  variables(
+    :server_gnutls => {
+      cert: node[:inspircd][:tlscert],
+      key: node[:inspircd][:tlskey],
+      bits: node[:inspircd][:tlsbits]
+    }
+  )
 end
 
 service 'inspircd' do

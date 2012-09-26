@@ -12,9 +12,11 @@ default['inspircd']['binary']      = "/usr/sbin/inspircd"
 default['inspircd']['pid']         = "/var/run/inspircd.pid"
 
 default['inspircd']['listen']      = ['127.0.0.1']
-default['inspircd']['fqdn']        = 'irc.tfoundry.com'
 default['inspircd']['tlslisten']   = ['127.0.0.1']
-
+default['inspircd']['fqdn']        = 'irc.tfoundry.com'
+default['inspircd']['tlskey']     = ""
+default['inspircd']['tlscert']    = ""
+default['inspircd']['tlsbits']    = "2048"
 default['inspircd']['links']      = []
 default['inspircd']['ulines']     = []
 
