@@ -57,8 +57,6 @@
 
 <include file="<%= @conf_dir %>/links.conf">
 
-<banlist chan="#morons" limit="128">
-<banlist chan="*" limit="69">
 <files motd="<%= @conf_dir %>/inspircd.motd" rules="<%= @conf_dir %>/inspircd.rules">
 <pid file="<%= @pid %>">
 <log method="file" type="* -USERINPUT -USEROUTPUT" level="default" target="<%= @log_dir %>/ircd.log">
@@ -347,13 +345,6 @@
 # Your server.                                                        #
 #                                                                     #
 
-<badip
-       # ipmask: IP range to ban. Wildcards and CIDR can be used.
-       ipmask="69.69.69.69"
-
-       # reason: Reason to display when user is disconnected.
-       reason="No porn here thanks.">
-
 <badnick
          # nick: Nick to disallow. Wildcards are supported.
          nick="ChanServ"
@@ -364,17 +355,6 @@
 <badnick nick="NickServ" reason="Reserved For Services">
 <badnick nick="OperServ" reason="Reserved For Services">
 <badnick nick="MemoServ" reason="Reserved For Services">
-
-<badhost
-         # host: ident@hostname to ban.
-         # Wildcards and CIDR (if you specify an IP) can be used.
-         host="*@hundredz.n.hundredz.o.1337.kiddies.com"
-
-         # reason: Reason to display when user is disconnected
-         reason="Too many 1337 kiddiots">
-
-<badhost host="root@*" reason="Don't irc as root!">
-<badhost host="*@172.32.0.0/16" reason="This subnet is bad.">
 
 # exception: Hosts that are exempt from [kgz]lines.
 <exception

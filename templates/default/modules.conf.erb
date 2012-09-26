@@ -7,3 +7,14 @@
 <module name="m_ssl_gnutls.so"> 
 <gnutls cafile="" crlfile="" certfile="<%=@server_gnutls[:cert]%>" keyfile="<%=@server_gnutls[:key]%>" dh_bits="<%=@server_gnutls[:bits]%>">
 <% end %>
+<% if (!@server_cloakkey.nil?) %>
+<module name="m_cloaking.so">
+<cloak mode="half" key="<%=@server_cloakkey%>" prefix="<%=@server_cloakprefix%>">
+<% end %>
+<% if (!@server_autojoin.nil?) %>
+<module name="m_conn_join.so">
+<autojoin channel="<%=@server_autojoin%>">
+<% end %>
+
+<module name="m_cycle.so">
+<module name="m_halfop.so">

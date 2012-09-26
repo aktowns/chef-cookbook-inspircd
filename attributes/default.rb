@@ -20,6 +20,9 @@ default['inspircd']['tlsbits']    = "2048"
 default['inspircd']['links']      = []
 default['inspircd']['ulines']     = []
 
+default['inspircd']['cloakkey']   = nil
+default['inspircd']['cloakprefix']= nil
+default['inspircd']['autojoin']   = nil
 
 case node['platform']
 when "debian","ubuntu"

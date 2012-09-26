@@ -194,8 +194,11 @@ template "modules.conf" do
     :server_gnutls => {
       cert: node[:inspircd][:tlscert],
       key: node[:inspircd][:tlskey],
-      bits: node[:inspircd][:tlsbits]
-    }
+      bits: node[:inspircd][:tlsbits],
+    },
+    server_cloakkey: node[:inspircd][:cloakkey],
+    server_cloakprefix: node[:inspircd][:cloakprefix],
+    server_autojoin: node[:inspircd][:autojoin].join(',')
   )
 end
 
