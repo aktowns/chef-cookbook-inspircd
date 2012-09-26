@@ -81,11 +81,11 @@
 <% @opers.each do |oper| %>
 <oper
       name="<%= oper[:id] %>"
-      hash="sha256"
+      hash="<%= oper[:hash] %>"
       # password: a hash of your password (see above option) hashed
       # with /mkpasswd <hash> <password> . See m_password_hash in modules.conf
       # for more information about password hashing.
-      password="<%= oper[:hash] %>"
+      password="<%= oper[:password] %>"
 
       host="<%= oper[:host] %>"
       type="<%= oper[:type] %>">

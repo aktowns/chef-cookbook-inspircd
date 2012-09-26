@@ -2,6 +2,7 @@
 <module name="m_md5.so">
 <module name="m_ripemd160.so">
 <module name="m_autoop.so">
+<module name="m_password_hash.so">
 <% if (!@server_gnutls.nil?) %>
 <module name="m_ssl_gnutls.so"> 
 <gnutls cafile="" crlfile="" certfile="<%=@server_gnutls[:cert]%>" keyfile="<%=@server_gnutls[:key]%>" dh_bits="<%=@server_gnutls[:bits]%>">
